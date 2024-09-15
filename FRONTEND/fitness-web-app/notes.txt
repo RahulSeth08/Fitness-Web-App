@@ -1,0 +1,28 @@
+## tailwind installlations cmnds
+
+PS C:\ALL PROGRAMMING\WEB DEV\Group_proj\Fitness-Web-App\FRONTEND\fitness-web-app> pnpm add -D tailwindcss postcss autoprefixer
+Packages: +77 -5
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+Progress: resolved 374, reused 336, downloaded 0, added 77, done
+
+devDependencies:
++ autoprefixer 10.4.20
++ postcss 8.4.47
++ tailwindcss 3.4.11
+
+Done in 6.2s
+PS C:\ALL PROGRAMMING\WEB DEV\Group_proj\Fitness-Web-App\FRONTEND\fitness-web-app> npx tailwindcss init -p
+
+Created Tailwind CSS config file: tailwind.config.js
+Created PostCSS config file: postcss.config.js
+PS C:\ALL PROGRAMMING\WEB DEV\Group_proj\Fitness-Web-App\FRONTEND\fitness-web-app> pnpm run dev
+
+> fitness-web-app@0.0.0 dev C:\ALL PROGRAMMING\WEB DEV\Group_proj\Fitness-Web-App\FRONTEND\fitness-web-app
+> vite
+
+
+  VITE v5.4.5  ready in 1641 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
