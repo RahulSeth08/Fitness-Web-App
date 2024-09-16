@@ -1,10 +1,10 @@
 # Fitness-Web-App
-Front-End Dev Team
+Front-End Dev Team :
   Darshan Ch
   Rahul Seth
 
-Back-End Dev Team
+Back-End Dev Team :
   Gourav Kumar
 
-Version Control
+Version Control :
   Rahul Seth
