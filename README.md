@@ -1,6 +1,6 @@
 # Fitness-Web-App
 Front-End Dev Team :
-  Darshan Ch
+  Darshan Ch,
   Rahul Seth
 
 Back-End Dev Team :
