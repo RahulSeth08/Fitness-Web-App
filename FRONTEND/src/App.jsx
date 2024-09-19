@@ -1,35 +1,12 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar"; // Adjust this path as necessary
+import { Landing } from "./components/Landing";
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        {/* Your route definitions */}
-        <Route
-          path="/"
-          //  element={<Home />}
-        />
-        <Route
-          path="/about"
-          //  element={<About />}
-        />
-        <Route
-          path="/services"
-          //  element={<Pricing />}
-        />
-        <Route
-          path="/bmiCalculator"
-          //  element={<Schedule />}
-        />
-        <Route
-          path="/contact"
-          // element={<Contact />}
-        />
-      </Routes>
-    </Router>
+    <>
+      <h1 className="bg-red-300 flex justify-center items-center text-4xl h-[50vh] font-mono font-bold">
+        Hello world!
+      </h1>
+      <Landing />
+    </>
   );
 }
-
-export default App;
