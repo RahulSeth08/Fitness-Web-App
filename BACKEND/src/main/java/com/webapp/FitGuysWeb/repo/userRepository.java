@@ -1,6 +1,6 @@
-package com.webapp.GottaFitGuys.repo;
+package com.webapp.FitGuysWeb.repo;
 
-import com.webapp.GottaFitGuys.model.user;
+import com.webapp.FitGuysWeb.model.user;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

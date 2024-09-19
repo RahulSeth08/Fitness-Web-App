@@ -1,8 +1,8 @@
-package com.webapp.GottaFitGuys.service;
+package com.webapp.FitGuysWeb.service;
 
 
-import com.webapp.GottaFitGuys.model.user;
-import com.webapp.GottaFitGuys.repo.userRepository;
+import com.webapp.FitGuysWeb.model.user;
+import com.webapp.FitGuysWeb.repo.userRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
