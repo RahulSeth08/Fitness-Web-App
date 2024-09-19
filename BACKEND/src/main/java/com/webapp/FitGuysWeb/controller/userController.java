@@ -1,7 +1,7 @@
-package com.webapp.GottaFitGuys.controller;
+package com.webapp.FitGuysWeb.controller;
 
-import com.webapp.GottaFitGuys.model.user;
-import com.webapp.GottaFitGuys.service.userService;
+import com.webapp.FitGuysWeb.model.user;
+import com.webapp.FitGuysWeb.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

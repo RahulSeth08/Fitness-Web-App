@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.webapp</groupId>
-	<artifactId>GottaFitGuys</artifactId>
+	<artifactId>FitGuysWeb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>GottaFitGuys</name>
 	<description>Group project</description>
