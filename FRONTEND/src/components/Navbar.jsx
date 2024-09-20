@@ -1,7 +1,10 @@
 import React from 'react'
+import { Button } from "@/components/ui/button"
 
-export const Navbar = () => {
+export function Navbar() {
   return (
-    <div className='flex justify-around bg-red-500'>Navbar</div>
+    <div>
+      <Button>Click me</Button>
+    </div>
   )
 }
