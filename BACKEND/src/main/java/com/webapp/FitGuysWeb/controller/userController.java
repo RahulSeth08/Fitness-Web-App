@@ -10,10 +10,14 @@ import java.util.List;
 
 @RestController
 @Controller
-
+@RequestMapping("/")
 public class userController {
     @Autowired
     private userService Service;
+    @GetMapping("/home")
+    public String hello() {
+        return "Hello!!!";
+    }
     @PostMapping("/user")
     user newUser(@RequestBody user newUser) {
         return Service.saveUser(newUser);
