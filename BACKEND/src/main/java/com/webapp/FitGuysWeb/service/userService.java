@@ -16,4 +16,8 @@ public class userService {
     public List<user> getUser() {
         return userRepo.findAll();
     }
+
+    public user saveUser(user newUser) {
+        return userRepo.save(newUser);
+    }
 }
