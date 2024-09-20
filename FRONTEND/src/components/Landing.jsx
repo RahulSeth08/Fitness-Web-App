@@ -1,9 +1,17 @@
-export function Landing() {
+import { Hero } from "./Hero"
+import { Navbar } from "./Navbar"
+import { Services } from "./Services"
+import { Bmi } from "./Bmi"
+import { Footer } from "./Footer"
+
+export function Landing (){
   return (
-    <>
-      <h2 className="text-bold underline font-mono bg-yellow-300">
-        This is Landing page
-      </h2>
-    </>
-  );
+    <div>
+      <Navbar/>
+      <Hero/>
+      <Services/>
+      <Bmi/>
+      <Footer/>
+    </div>
+  )
 }
