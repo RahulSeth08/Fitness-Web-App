@@ -1,7 +1,6 @@
-package com.webapp.GottaFitGuys.model;
+package com.webapp.FitGuysWeb.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
 
