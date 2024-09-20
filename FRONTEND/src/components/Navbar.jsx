@@ -15,15 +15,15 @@ export function Navbar() {
           </div>
           <div className="hidden md:block flex-grow">
             <div className="flex justify-center space-x-8">
-              {['Home', 'Classes', 'Trainers', 'Nutrition', 'Contact'].map((item) => (
-                <a key={item} href="#" className="text-gray-300 hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
+              {['About', 'Services', 'BMI', 'Nutrition', 'Contact'].map((item) => (
+                <a key={item} href="#" className="text-gray-300 hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-[16px] font-medium transition duration-150 ease-in-out">
                   {item}
                 </a>
               ))}
             </div>
           </div>
           <div className="hidden md:block">
-            <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
+            <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-[16px] font-medium transition duration-150 ease-in-out">
               Join Now
             </button>
           </div>
