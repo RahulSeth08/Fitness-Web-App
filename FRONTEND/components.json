@@ -6,15 +6,14 @@
   "tailwind": {
     "config": "tailwind.config.js",
     "css": "src/index.css",
-    "baseColor": "stone",
-    "cssVariables": true,
+    "baseColor": "gray",
+    "cssVariables": false,
     "prefix": ""
   },
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils",
     "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "magicui": "@/components/magicui"
   }
 }
