@@ -1,6 +1,6 @@
 # Fitness-Web-App ~ In the making !!
 Dev Team :
+  Rahul Seth,
   Darshan Ch,
-  Rahul Seth
-  Madhav Sharma
+  Madhav Sharma &
   Gourav Kumar
