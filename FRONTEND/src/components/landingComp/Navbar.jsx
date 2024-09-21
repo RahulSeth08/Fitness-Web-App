@@ -36,7 +36,7 @@ export function Navbar() {
                     <NavigationMenuItem key={item}>
                       <NavigationMenuLink
                         href={`#${item.toLowerCase()}`}
-                        className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-6 py-2 rounded-md transition duration-300"
+                        className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-2 rounded-md transition duration-300"
                       >
                         {item}
                       </NavigationMenuLink>

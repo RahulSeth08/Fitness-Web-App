@@ -1,6 +1,6 @@
 "use client";
 import hero from "../../assets/hero.jpg";
-import ShimmerButton from "../magicui/shimmer-button"; // Adjust the import path as needed
+import ShimmerButton from "../magicui/shimmer-button";
 
 export const Hero = () => {
   return (
@@ -17,13 +17,15 @@ export const Hero = () => {
         />
       </div>
       <div className="relative z-10 text-center text-white">
-        <h1 className="text-5xl font-bold mb-4">
+        <h1 className="text-6xl font-bold mb-4 leading-tight tracking-wide">
           Transform Your Body, Transform Your Life
         </h1>
-        <p className="text-xl mb-8">
-          Join our fitness community and achieve your health goals
+        <p className="text-xl mb-8 leading-relaxed tracking-wide">
+          Join us and achieve your health goals
         </p>
-        <div className="flex justify-center"> {/* Center the button */}
+        <div className="flex justify-center">
+          {" "}
+          {/* Center the button */}
           <ShimmerButton
             shimmerColor="#ffffff"
             shimmerSize="0.05em"
