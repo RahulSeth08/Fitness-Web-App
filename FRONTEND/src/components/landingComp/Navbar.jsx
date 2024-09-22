@@ -17,13 +17,13 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <span className="text-xl font-bold mr-2">Fitguysweb</span>
-            <div className="flex-shrink-0">
+            {/* <span className="text-xl font-bold mr-2">Fitguysweb</span> */}
+            <div className="flex-shrink-0 pt-5">
               <img
                 src={logo}
                 alt="Fitness Logo"
-                width={40}
-                height={40}
+                width={90}
+                height={80}
                 className="rounded-full"
               />
             </div>

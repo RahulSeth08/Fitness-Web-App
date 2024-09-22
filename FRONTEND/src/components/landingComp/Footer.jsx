@@ -5,8 +5,8 @@ export function Footer() {
     <footer className="bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white py-12">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 px-6">
         {/* Company Description */}
-        <div className="flex flex-col">
-          <h2 className="text-2xl font-bold mb-4">Fitguysweb</h2>
+        <div className="flex flex-col mr-8"> {/* Added mr-8 for horizontal gap */}
+          <h2 className="text-2xl font-bold mb-6">Fitguysweb</h2>
           <p className="text-sm text-gray-400 leading-relaxed">
             Transform Your Body, Transform Your Life. Join us and achieve your health goals through our expertly curated workouts and programs.
           </p>
