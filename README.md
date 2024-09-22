@@ -1,15 +1,6 @@
-# Fitness-Web-App
-Front-End Dev Team :
+# Fitness-Web-App ~ In the making !!
+Dev Team :
+  Rahul Seth,
   Darshan Ch,
-  Rahul Seth
-  Madhav Sharma (Goat)
-  Darshan chutiya hai
-  
-  
-  
-
-Back-End Dev Team :
+  Madhav Sharma &
   Gourav Kumar
-
-Version Control :
-  Rahul Seth

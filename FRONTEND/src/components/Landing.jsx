@@ -1,17 +1,19 @@
-import { Hero } from "./Hero"
-import { Navbar } from "./Navbar"
-import { Services } from "./Services"
-import { Bmi } from "./Bmi"
-import { Footer } from "./Footer"
+import { Hero } from "./landingComp/Hero";
+import { Services } from "./landingComp/Services";
+import { Navbar } from "./landingComp/Navbar";
+import { Footer } from "./landingComp/Footer";
+import { Bmi } from "./landingComp/Bmi";
 
-export function Landing (){
+export function Landing() {
   return (
-    <div>
-      <Navbar/>
-      <Hero/>
-      <Services/>
-      <Bmi/>
-      <Footer/>
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-gray-100">
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <Bmi />
+        <Footer />
+      </main>
     </div>
-  )
+  );
 }
