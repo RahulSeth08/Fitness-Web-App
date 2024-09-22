@@ -1,8 +1,10 @@
-import { Hero } from "./landingComp/Hero";
-import { Services } from "./landingComp/Services";
 import { Navbar } from "./landingComp/Navbar";
-import { Footer } from "./landingComp/Footer";
+import { Hero } from "./landingComp/Hero";
 import { Bmi } from "./landingComp/Bmi";
+import { Services } from "./landingComp/Services";
+// import { Nutrition } from "./landingComp/Nutrition";
+// import { About } from "./landingComp/About";
+import { Footer } from "./landingComp/Footer";
 
 export function Landing() {
   return (
@@ -12,6 +14,8 @@ export function Landing() {
         <Hero />
         <Services />
         <Bmi />
+        {/* <About/> */}
+        {/* <Nutrition/> */}
         <Footer />
       </main>
     </div>
