@@ -33,9 +33,9 @@ export const Bmi = () => {
     let newMessage = "";
     if (calculatedBmi < 18.5) {
       newMessage = "Underweight";
-    } else if (calculatedBmi >= 18.5 && calculatedBmi <= 24.9) {
+    } else if (calculatedBmi >= 18.5 && calculatedBmi <= 24.99) {
       newMessage = "Normal weight";
-    } else if (calculatedBmi >= 25 && calculatedBmi <= 29.9) {
+    } else if (calculatedBmi >=25 && calculatedBmi <= 29.99) {
       newMessage = "Overweight";
     } else {
       newMessage = "Obesity";
