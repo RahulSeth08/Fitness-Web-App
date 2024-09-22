@@ -22,12 +22,14 @@ public class Securityconfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(customizer->customizer.disable()) //lambda
-                .authorizeHttpRequests(auth->auth.anyRequest().permitAll())
+                .authorizeHttpRequests(auth->auth
+                        .requestMatchers("/signup").permitAll()
+                        .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
-                //http.formLogin(Customizer.withDefaults());
+        //http.formLogin(Customizer.withDefaults());
         return http.build();
     }
     @Bean
