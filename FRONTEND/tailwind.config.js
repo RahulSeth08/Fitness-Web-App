@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"], // Added font family
+        sans: ["Roboto", "Inter", "sans-serif"], // Added font family
       },
       keyframes: {
         // Existing keyframes
