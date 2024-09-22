@@ -18,12 +18,12 @@ public class userController {
     public String hello() {
         return "Hello!!!";
     }
-    @PostMapping("/user")
+    @PostMapping("/signup")
     user newUser(@RequestBody user newUser) {
         return Service.saveUser(newUser);
     }
 
-    @GetMapping("/users")
+    @GetMapping("/login")
     public List<user> getUser() {
         return Service.getUser();
     }
