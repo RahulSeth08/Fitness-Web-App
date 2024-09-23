@@ -2,7 +2,7 @@ import { Navbar } from "./landingComp/Navbar";
 import { Hero } from "./landingComp/Hero";
 import { Bmi } from "./landingComp/Bmi";
 import { Services } from "./landingComp/Services";
-// import { Nutrition } from "./landingComp/Nutrition";
+import { Nutrition } from "./landingComp/Nutrition";
 // import { About } from "./landingComp/About";
 import { Footer } from "./landingComp/Footer";
 
@@ -15,7 +15,7 @@ export function Landing() {
         <Services />
         <Bmi />
         {/* <About/> */}
-        {/* <Nutrition/> */}
+        <Nutrition/>
         <Footer />
       </main>
     </div>
