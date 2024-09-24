@@ -6,25 +6,37 @@ import {
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
-} from "../ui/navigation-menu"; // Assuming these are custom components
+} from "../ui/navigation-menu";
 import logo from "../../assets/logo.png";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const navbarHeight = document.querySelector("nav").offsetHeight; // Get navbar height
+      const sectionPosition = section.offsetTop - navbarHeight; // Calculate the offset position
+      window.scrollTo({
+        top: sectionPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <nav className="fixed w-full z-10 bg-gray-900 bg-opacity-90 shadow-lg backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            {/* <span className="text-xl font-bold mr-2">Fitguysweb</span> */}
             <div className="flex-shrink-0 pt-5">
               <img
                 src={logo}
                 alt="Fitness Logo"
                 width={90}
                 height={80}
-                className="rounded-full"
+                className="rounded-full cursor-pointer"
+                onClick={() => scrollToSection("hero")}
               />
             </div>
           </div>
@@ -35,8 +47,11 @@ export function Navbar() {
                   (item) => (
                     <NavigationMenuItem key={item}>
                       <NavigationMenuLink
-                        href={`#${item.toLowerCase()}`}
-                        className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-2 rounded-md transition duration-300"
+                        onClick={() => {
+                          scrollToSection(item.toLowerCase());
+                          setIsMenuOpen(false); // Close the menu
+                        }}
+                        className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-2 rounded-md transition duration-300 cursor-pointer"
                       >
                         {item}
                       </NavigationMenuLink>
@@ -58,9 +73,9 @@ export function Navbar() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6 bg-white" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-white" />
               )}
               <span className="sr-only">Toggle menu</span>
             </Button>
@@ -75,8 +90,11 @@ export function Navbar() {
               (item) => (
                 <a
                   key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-gray-700 hover:bg-white hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition duration-300"
+                  onClick={() => {
+                    scrollToSection(item.toLowerCase());
+                    setIsMenuOpen(false); // Close the menu
+                  }}
+                  className="text-gray-300 hover:bg-white hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition duration-300"
                 >
                   {item}
                 </a>

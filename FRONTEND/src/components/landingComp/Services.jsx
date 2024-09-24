@@ -8,7 +8,7 @@ import fitness from "../../assets/fitness.png";
 export function Services() {
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-2xl font-bold mb-8 text-center">SERVICES</h1>
+      <h1 className="text-2xl font-bold mb-8 text-center py-5">SERVICES</h1>
       <Marquee pauseOnHover repeat={2}>
         <div className="flex space-x-6">
           {/* MagicCard 1 - Personalized Workout Plan */}

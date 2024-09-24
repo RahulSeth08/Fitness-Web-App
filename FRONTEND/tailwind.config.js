@@ -10,10 +10,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        lavender: '#7C3AED',
+        lavender: "#7C3AED",
       },
       fontFamily: {
-        sans: ["Roboto", "Inter", "sans-serif"],
+        sans: ["Poppins", "Roboto", "Inter", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
@@ -34,7 +34,7 @@ module.exports = {
           from: { transform: "translateX(0)" },
           to: { transform: "translate(calc(100vw - 100%), 0)" },
         },
-        "marquee": {
+        marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
         },
