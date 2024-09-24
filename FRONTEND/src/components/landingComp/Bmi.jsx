@@ -8,8 +8,8 @@ import {
 } from "../ui/card";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import quotes from "../../assets/quotes.json"; // Adjust the path as necessary
-import { TypographyBlockquote } from "../ui/TypographyBlockquote"; // Adjust the import path as needed
+import quotes from "../../assets/quotes.json";
+import { TypographyBlockquote } from "../ui/TypographyBlockquote";
 
 export const Bmi = () => {
   const [bmi, setBmi] = useState(0);
@@ -22,11 +22,9 @@ export const Bmi = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.currentTarget);
-    const height = parseFloat(formData.get("height")) / 100; // Convert height to meters
+    const height = parseFloat(formData.get("height")) / 100;
     const weight = parseFloat(formData.get("weight"));
-
     const calculatedBmi = calculateBMI(height, weight);
     setBmi(parseFloat(calculatedBmi));
 
@@ -35,7 +33,7 @@ export const Bmi = () => {
       newMessage = "Underweight";
     } else if (calculatedBmi >= 18.5 && calculatedBmi <= 24.99) {
       newMessage = "Normal weight";
-    } else if (calculatedBmi >=25 && calculatedBmi <= 29.99) {
+    } else if (calculatedBmi >= 25 && calculatedBmi <= 29.99) {
       newMessage = "Overweight";
     } else {
       newMessage = "Obesity";
@@ -54,7 +52,10 @@ export const Bmi = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-4 bg-gray-900 bg-opacity-90 shadow-lg border border-gray-800">
+    <div className="container mx-auto p-4 shadow-lg">
+      <h1 className="text-2xl font-bold mb-8 text-center py-5">
+        BMI CALCULATOR
+      </h1>
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="px-9 py-9 space-y-4">
           <h1 className="text-3xl font-bold text-white">What's BMI</h1>
@@ -65,67 +66,70 @@ export const Bmi = () => {
             squared. It provides an indication of whether a person is:
             Underweight, Normal weight, Overweight, or Obese.
           </p>
-          <TypographyBlockquote quote={quote}></TypographyBlockquote>{" "}
+          <TypographyBlockquote quote={quote}></TypographyBlockquote>
         </div>
-        <Card className="bg-gray-800 shadow-md rounded-lg">
-          <CardHeader>
-            <CardTitle className="text-white">
-              Let's calculate your BMI
-            </CardTitle>
-            <CardDescription className="text-gray-400">
-              Easily determine your body mass index with our accurate
-              calculation tool.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex items-center p-5 space-x-4">
-                <label
-                  htmlFor="weight"
-                  className="text-lg font-medium leading-none text-white"
-                >
-                  Enter your weight:
-                </label>
-                <Input
-                  id="weight"
-                  name="weight"
-                  placeholder="Weight in kg"
-                  required
-                  className="text-black w-36"
-                />
-              </div>
-              <div className="flex items-center p-5 space-x-4">
-                <label
-                  htmlFor="height"
-                  className="text-lg font-medium leading-none text-white"
-                >
-                  Enter your height:
-                </label>
-                <Input
-                  id="height"
-                  name="height"
-                  type="number"
-                  placeholder="Height in cm"
-                  required
-                  className="text-black w-36"
-                />
-              </div>
-              <div className="flex items-center pl-5 space-x-4">
-                <Button type="submit" className="w-24 bg-slate-100">
-                  Calculate
-                </Button>
-                {bmi > 0 && (
-                  <div className="p-4 bg-gray-800 rounded-md text-white">
-                    <h3 className="text-lg font-semibold mb-2">
-                      Your BMI: {bmi}
-                    </h3>
-                    <p>{message}</p>
-                  </div>
-                )}
-              </div>
-            </form>
-          </CardContent>
-        </Card>
+
+        <div className="flex flex-col items-center">
+          <Card className="bg-gray-800 shadow-lg rounded-lg flex-1 max-w-lg border border-gray-600">
+            <CardHeader>
+              <CardTitle className="text-white">
+                Let's calculate your BMI
+              </CardTitle>
+              <CardDescription className="text-gray-400">
+                Easily determine your body mass index with our accurate
+                calculation tool.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex ">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="flex items-center p-5 space-x-4">
+                  <label
+                    htmlFor="weight"
+                    className="text-lg font-medium leading-none text-white"
+                  >
+                    Enter your weight:
+                  </label>
+                  <Input
+                    id="weight"
+                    name="weight"
+                    placeholder="Weight in kg"
+                    required
+                    className="text-black w-36"
+                  />
+                </div>
+                <div className="flex items-center p-5 space-x-4">
+                  <label
+                    htmlFor="height"
+                    className="text-lg font-medium leading-none text-white"
+                  >
+                    Enter your height:
+                  </label>
+                  <Input
+                    id="height"
+                    name="height"
+                    type="number"
+                    placeholder="Height in cm"
+                    required
+                    className="text-black w-36"
+                  />
+                </div>
+                <div className="flex items-center pl-5 space-x-4">
+                  <Button type="submit" className="w-24 bg-slate-100">
+                    Calculate
+                  </Button>
+                  {bmi > 0 && (
+                    <div className="p-4 bg-gray-800 rounded-md text-white">
+                      <h3 className="text-lg font-semibold mb-2">
+                        Your BMI: {bmi}
+                      </h3>
+                      <p>{message}</p>
+                    </div>
+                  )}
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );

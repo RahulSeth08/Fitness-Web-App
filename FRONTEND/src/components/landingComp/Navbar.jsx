@@ -76,7 +76,7 @@ export function Navbar() {
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-gray-700 hover:bg-white hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition duration-300"
+                  className="text-gray-300 hover:bg-white hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition duration-300"
                 >
                   {item}
                 </a>
