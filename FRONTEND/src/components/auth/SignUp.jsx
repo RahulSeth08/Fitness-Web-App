@@ -125,7 +125,7 @@ export function SignUp() {
         <div className="text-center">
           <p className="text-sm text-gray-600">
             Already have an account?{' '}
-            <Link to="/auth/signup" className="font-medium text-indigo-600 hover:text-indigo-500">
+            <Link to="/auth/signin" className="font-medium text-indigo-600 hover:text-indigo-500">
               Sign in
             </Link>
           </p>
