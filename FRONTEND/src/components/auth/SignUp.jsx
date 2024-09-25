@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Eye, EyeOff, User, Mail, Lock, Calendar } from 'lucide-react';
-// import { Link } from 'react-router-dom'; // Replace with 'react-router-dom' if using React Router
+import { Link } from 'react-router-dom'; // Replace with 'react-router-dom' if using React Router
 
-export function Register() {
+export function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -125,7 +125,7 @@ export function Register() {
         <div className="text-center">
           <p className="text-sm text-gray-600">
             Already have an account?{' '}
-            <Link to="/sign-in" className="font-medium text-indigo-600 hover:text-indigo-500">
+            <Link to="/auth/signup" className="font-medium text-indigo-600 hover:text-indigo-500">
               Sign in
             </Link>
           </p>

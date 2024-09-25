@@ -11,7 +11,11 @@ module.exports = {
     extend: {
       colors: {
         lavender: "#7C3AED",
+        'deep-green': '#004d00',
+        'soft-blue': '#A7C6ED', 
+        'accent-yellow': '#FFD700', 
       },
+      
       fontFamily: {
         sans: ["Poppins", "Roboto", "Inter", "sans-serif"],
       },
