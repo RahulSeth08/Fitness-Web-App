@@ -52,14 +52,14 @@ export const Bmi = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-4 shadow-lg">
-      <h1 className="text-2xl font-bold mb-8 text-center py-5">
+    <div className="container mx-auto p-4 shadow-lg bg-slate-800 bg-cover bg-center">
+      <h1 className="text-2xl font-bold mb-8 text-center py-5 text-white">
         BMI CALCULATOR
       </h1>
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="px-9 py-9 space-y-4">
           <h1 className="text-3xl font-bold text-white">What's BMI</h1>
-          <p className="text-xl font-light text-gray-300 pb-7">
+          <p className="text-xl font-light text-white pb-7">
             Body Mass Index (BMI) is a simple calculation using a person’s
             height and weight. The formula is: BMI = kg/m², where kg is a
             person’s weight in kilograms and m² is their height in meters
