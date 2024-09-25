@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import {
@@ -11,17 +12,22 @@ import logo from "../../assets/logo.png";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      const navbarHeight = document.querySelector("nav").offsetHeight; // Get navbar height
-      const sectionPosition = section.offsetTop - navbarHeight; // Calculate the offset position
+      const navbarHeight = document.querySelector("nav").offsetHeight;
+      const sectionPosition = section.offsetTop - navbarHeight;
       window.scrollTo({
         top: sectionPosition,
         behavior: "smooth",
       });
     }
+  };
+
+  const toLogIn = () => {
+    navigate("/auth/signin");
   };
 
   return (
@@ -49,7 +55,7 @@ export function Navbar() {
                       <NavigationMenuLink
                         onClick={() => {
                           scrollToSection(item.toLowerCase());
-                          setIsMenuOpen(false); // Close the menu
+                          setIsMenuOpen(false);
                         }}
                         className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-2 rounded-md transition duration-300 cursor-pointer"
                       >
@@ -62,7 +68,10 @@ export function Navbar() {
             </NavigationMenu>
           </div>
           <div className="hidden md:block">
-            <Button className="bg-gray-900 bg-opacity-90 hover:bg-white text-gray-300 hover:text-gray-900 border border-gray-600 hover:border-gray-800 transition duration-300">
+            <Button
+              className="bg-gray-900 bg-opacity-90 hover:bg-white text-gray-300 hover:text-gray-900 border border-gray-600 hover:border-gray-800 transition duration-300"
+              onClick={toLogIn}
+            >
               Join Now
             </Button>
           </div>
@@ -92,7 +101,7 @@ export function Navbar() {
                   key={item}
                   onClick={() => {
                     scrollToSection(item.toLowerCase());
-                    setIsMenuOpen(false); // Close the menu
+                    setIsMenuOpen(false);
                   }}
                   className="text-gray-300 hover:bg-white hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition duration-300"
                 >
@@ -102,7 +111,10 @@ export function Navbar() {
             )}
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200">
-            <Button className="w-full bg-gray-900 bg-opacity-90 hover:bg-white text-gray-300 hover:text-gray-900 border border-gray-600 hover:border-gray-800 transition duration-300">
+            <Button
+              className="w-full bg-gray-900 bg-opacity-90 hover:bg-white text-gray-300 hover:text-gray-900 border border-gray-600 hover:border-gray-800 transition duration-300"
+              onClick={toLogIn}
+            >
               Join Now
             </Button>
           </div>
