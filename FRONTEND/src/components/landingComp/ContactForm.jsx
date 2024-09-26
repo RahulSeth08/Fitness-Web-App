@@ -19,22 +19,15 @@ export const ContactForm = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const mailtoLink = `mailto:darshanchoudhary1511@gmail.com?subject=Contact from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AMessage: ${formData.message}`;
+    
+    // Open the default email client
+    window.location.href = mailtoLink;
 
-    if (response.ok) {
-      alert("Message sent successfully!");
-      setFormData({ name: "", email: "", phone: "", message: "" }); // Clear form after submission
-    } else {
-      alert("Error sending message.");
-    }
+    // Clear the form after submission
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
@@ -113,82 +106,4 @@ export const ContactForm = () => {
 };
 
 
-// import { Button } from "../ui/button"; // Update this path based on your file structure
-// import { Input } from "../ui/input";
-// import { Textarea } from "../ui/textarea";
-// import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 
-// export const ContactForm = () => {
-//   return (
-//     <Card className="w-full max-w-6xl mx-auto bg-gray-100 shadow-xl">
-//       <CardHeader className="bg-gray-800 text-white">
-//         <CardTitle className="text-3xl font-bold">Contact Us</CardTitle>
-//       </CardHeader>
-//       <CardContent className="p-6">
-//         <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//           <div className="space-y-4">
-//             <div>
-//               <label
-//                 htmlFor="name"
-//                 className="block text-sm font-medium text-gray-700 mb-1"
-//               >
-//                 Name
-//               </label>
-//               <Input
-//                 id="name"
-//                 placeholder="Your Name"
-//                 className="w-full bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-//               />
-//             </div>
-//             <div>
-//               <label
-//                 htmlFor="email"
-//                 className="block text-sm font-medium text-gray-700 mb-1"
-//               >
-//                 Email
-//               </label>
-//               <Input
-//                 id="email"
-//                 type="email"
-//                 placeholder="your@email.com"
-//                 className="w-full bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-//               />
-//             </div>
-//             <div>
-//               <label
-//                 htmlFor="phone"
-//                 className="block text-sm font-medium text-gray-700 mb-1"
-//               >
-//                 Phone
-//               </label>
-//               <Input
-//                 id="phone"
-//                 type="tel"
-//                 placeholder="Your Phone Number"
-//                 className="w-full bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-//               />
-//             </div>
-//           </div>
-//           <div className="space-y-4">
-//             <div>
-//               <label
-//                 htmlFor="message"
-//                 className="block text-sm font-medium text-gray-700 mb-1"
-//               >
-//                 Message
-//               </label>
-//               <Textarea
-//                 id="message"
-//                 placeholder="Your message here..."
-//                 className="w-full h-32 bg-white border-gray-300 focus:border-purple-500 focus:ring-purple-500 resize-none"
-//               />
-//             </div>
-//             <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded transition duration-300 cursor-pointer">
-//               Send Message
-//             </Button>
-//           </div>
-//         </form>
-//       </CardContent>
-//     </Card>
-//   );
-// };
