@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import signupimg from '../../assets/signup.jpg'
+import signupimg from '../../assets/signup.jpg';
 
 export function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -36,12 +36,12 @@ export function SignUp() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br bg-gray-900">
-      <div className="w-full max-w-6xl h-[600px] bg-white rounded-3xl shadow-2xl overflow-hidden flex">
-        <div className="w-1/2 p-12 flex flex-col">
-          <div className="mb-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
+      <div className="w-full max-w-4xl h-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden flex">
+        <div className="w-1/2 p-8 flex flex-col">
+          <div className="mb-6">
             <svg
-              className="w-12 h-12"
+              className="w-10 h-10"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -68,15 +68,15 @@ export function SignUp() {
                 strokeLinejoin="round"
               />
             </svg>
-            <h2 className="text-2xl font-bold mt-2">FITNESS</h2>
-            <p className="text-sm text-gray-600">Gym management</p>
+            <h2 className="text-2xl font-bold mt-2">FitGuysWeb</h2>
+            <p className="text-xs text-gray-600">Your Transformation Partner</p>
           </div>
-          <h1 className="text-3xl font-bold mb-6">Sign Up</h1>
-          <form onSubmit={handleSubmit} className="space-y-4 flex-grow">
+          <h1 className="text-2xl font-bold mb-4">Sign Up</h1>
+          <form onSubmit={handleSubmit} className="space-y-3 flex-grow">
             <input
               type="text"
               placeholder="Full Name"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               required
@@ -84,7 +84,7 @@ export function SignUp() {
             <input
               type="text"
               placeholder="Username"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -92,7 +92,7 @@ export function SignUp() {
             <input
               type="email"
               placeholder="Email"
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -101,7 +101,7 @@ export function SignUp() {
               <input
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Password"
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -121,18 +121,18 @@ export function SignUp() {
             {error && <p className="text-red-500 text-sm">{error}</p>}
             <button
               type="submit"
-              className="w-full p-3 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300"
+              className="w-full p-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition duration-300"
             >
               Sign Up
             </button>
           </form>
-          <p className="text-sm text-center mt-4">
+          <p className="text-xs text-center mt-3">
             Already have an account?{' '}
-            <Link to="/auth/signin" className="text-purple-600 hover:underline">
+            <Link to="/auth/signin" className="text-indigo-600 hover:underline">
               Log in
             </Link>
           </p>
-          <div className="mt-8 text-xs text-gray-500 flex justify-between">
+          <div className="mt-8 text-xs text-gray-500 flex justify-between"> {/* Increased margin-top for bottom gap */}
             <a href="#" className="hover:underline">
               Terms of Use
             </a>
@@ -143,7 +143,7 @@ export function SignUp() {
         </div>
         <div className="w-1/2 relative overflow-hidden">
           <img
-            src= {signupimg}
+            src={signupimg}
             alt="Fitness"
             className="absolute inset-0 w-full h-full object-cover"
           />
