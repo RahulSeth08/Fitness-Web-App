@@ -21,12 +21,13 @@ public class userController {
     }
     @PostMapping("/signup")
     user newUser(@RequestBody user newUser) {
+
         return Service.saveUser(newUser);
     }
 
-    @GetMapping("/login")
-    public List<user> getUser() {
-        return Service.getUser();
+    @PostMapping("/login")
+    public String login(@RequestBody user user) {
+        return Service.verify(user);
     }
 
 
