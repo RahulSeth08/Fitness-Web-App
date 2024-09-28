@@ -30,10 +30,6 @@ export function Navbar() {
     navigate("/auth/signin");
   };
 
-  const tohome = () => {
-    navigate("/");
-  };
-
   return (
     <nav className="fixed w-full z-10 bg-gray-900 bg-opacity-90 shadow-lg backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +42,9 @@ export function Navbar() {
                 width={90}
                 height={80}
                 className="rounded-full cursor-pointer"
-                onClick={tohome}
+                onClick={() => {
+                  scrollToSection("hero".toLowerCase());
+                }}
               />
             </div>
           </div>
