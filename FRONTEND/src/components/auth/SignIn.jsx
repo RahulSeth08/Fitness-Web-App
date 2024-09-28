@@ -3,14 +3,13 @@ import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import signinimg from '../../assets/signup.jpg'; // Ensure the correct path for the image
 
-
 export function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -31,10 +30,15 @@ export function SignIn() {
             if (data.token) {
               const token = data.token;
               localStorage.setItem('authToken', token);
-              navigate("/dashboard"); // Redirect to dashboard only after successful login
+              navigate('/dashboard');
             } else {
               setError('Token not found in response. Please try again.');
             }
+          } else {
+            // If the response is not JSON, assume it's plain text
+            const token = await response.text();
+            localStorage.setItem('authToken', token);
+            navigate('/dashboard');
           }
         } catch (jsonError) {
           setError('Failed to parse response. Please try again.');

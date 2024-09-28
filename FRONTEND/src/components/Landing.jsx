@@ -1,9 +1,8 @@
 import { Hero } from "./landingComp/Hero";
-import { About } from "./landingComp/About";
+// import { About } from "./landingComp/About";
 import { Bmi } from "./landingComp/Bmi";
 import { Services } from "./landingComp/Services";
 import { Nutrition } from "./landingComp/Nutrition";
-// import { About } from "./landingComp/About";
 import { ContactForm } from "./landingComp/ContactForm";
 import { Footer } from "./landingComp/Footer";
 export function Landing() {
@@ -14,9 +13,9 @@ export function Landing() {
         <section id="hero">
           <Hero />
         </section>
-        <section id="about">
+        {/* <section id="about">
           <About />
-        </section>
+        </section> */}
         <section id="services">
           <Services />
         </section>

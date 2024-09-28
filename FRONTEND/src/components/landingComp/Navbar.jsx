@@ -67,7 +67,7 @@ export function Navbar() {
                           scrollToSection(item.toLowerCase());
                           setIsMenuOpen(false);
                         }}
-                        className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-2 rounded-md transition duration-300 cursor-pointer"
+                        className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-5 py-2 rounded-md transition duration-300 cursor-pointer"
                       >
                         {item}
                       </NavigationMenuLink>
@@ -77,7 +77,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     onClick={toBlog} // Link to Blog
-                    className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-2 rounded-md transition duration-300 cursor-pointer"
+                    className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-5 py-2 rounded-md transition duration-300 cursor-pointer"
                   >
                     Blog
                   </NavigationMenuLink>
@@ -85,7 +85,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     onClick={toPodcasts} // Link to Podcasts
-                    className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-2 rounded-md transition duration-300 cursor-pointer"
+                    className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-5 py-2 rounded-md transition duration-300 cursor-pointer"
                   >
                     Podcasts
                   </NavigationMenuLink>

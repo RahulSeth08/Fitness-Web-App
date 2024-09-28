@@ -37,7 +37,7 @@ export function SignUp() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900">
-      <div className="w-full max-w-4xl h-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden flex">
+      <div className="w-full max-w-4xl h-[600px] bg-white rounded-2xl shadow-2xl overflow-hidden flex">
         <div className="w-1/2 p-8 flex flex-col">
           <div className="mb-6">
             <svg
