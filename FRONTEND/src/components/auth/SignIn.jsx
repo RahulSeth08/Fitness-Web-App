@@ -3,29 +3,49 @@ import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import signinimg from '../../assets/signup.jpg'; // Ensure the correct path for the image
 
+
 export function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8080/signin', {
+      const response = await fetch('http://localhost:8080/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       });
 
       if (response.ok) {
-        navigate('/dashboard'); // Redirect to the dashboard after successful sign-in
+        try {
+          // Check if the response is JSON
+          const contentType = response.headers.get('Content-Type');
+          if (contentType && contentType.includes('application/json')) {
+            const data = await response.json();
+            if (data.token) {
+              const token = data.token;
+              localStorage.setItem('authToken', token);
+              navigate("/dashboard"); // Redirect to dashboard only after successful login
+            } else {
+              setError('Token not found in response. Please try again.');
+            }
+          }
+        } catch (jsonError) {
+          setError('Failed to parse response. Please try again.');
+        }
       } else {
-        const errorData = await response.json();
-        setError(errorData.message || 'Sign in failed. Please try again.');
+        try {
+          const errorData = await response.json();
+          setError(errorData.message || 'Sign in failed. Please try again.');
+        } catch (jsonError) {
+          setError('An error occurred. Please try again.');
+        }
       }
     } catch (err) {
       setError('An error occurred during sign in. Please try again.');
@@ -50,11 +70,11 @@ export function SignIn() {
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
-                type="email"
-                placeholder="Email"
+                type="text"
+                placeholder="Username"
                 className="w-full p-2 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>
