@@ -5,13 +5,13 @@ import blogs from "../../assets/blogs.json";
 
 export function Blog() {
   const categories = [
-    "Recipes",
-    "Nutrition",
-    "Weight Loss",
-    "Fitness",
-    "Inspiration",
-    "Essentials",
-    "Video",
+    // "Recipes",
+    // "Nutrition",
+    // "Weight Loss",
+    // "Fitness",
+    // "Inspiration",
+    // "Essentials",
+    // "Video",
   ];
 
   return (
@@ -24,21 +24,21 @@ export function Blog() {
 
       <nav className="bg-white py-2 sticky top-0 z-10 shadow-md">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <ul className="flex space-x-4 overflow-x-auto pb-2">
+          <ul className="flex space-x-6 overflow-x-auto pb-2"> {/* Increased space between categories */}
             {categories.map((category) => (
               <li key={category}>
                 <a
                   href={`#${category.toLowerCase()}`}
-                  className="text-sm hover:text-orange-500 whitespace-nowrap"
+                  className="text-md font-semibold hover:text-orange-500 whitespace-nowrap" // Updated font size and weight
                 >
                   {category}
                 </a>
               </li>
             ))}
           </ul>
-          <Button variant="ghost" size="icon">
+          {/* <Button variant="ghost" size="icon">
             <Search className="h-5 w-5 text-gray-600" />
-          </Button>
+          </Button> */}
         </div>
       </nav>
 
@@ -66,7 +66,7 @@ export function Blog() {
 
         <section>
           <h2 className="text-2xl font-bold mb-6 text-purple-900">
-            Trending blogs
+            Trending Blogs
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {blogs.map((blog, index) => (
@@ -81,7 +81,7 @@ export function Blog() {
                   className="w-full h-48 object-cover object-center"
                 />
                 <div className="p-4 flex flex-col flex-grow">
-                  <h3 className="font-semibold mb-2 text-gray-800">
+                  <h3 className="font-semibold mb-2 text-gray-800 text-lg"> {/* Increased font size */}
                     {blog.name}
                   </h3>
                   {/* Limit the description to prevent layout break */}

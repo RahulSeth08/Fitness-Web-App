@@ -30,6 +30,14 @@ export function Navbar() {
     navigate("/auth/signin");
   };
 
+  const toBlog = () => {
+    navigate("/blog"); // Navigate to the Blog page
+  };
+
+  const toPodcasts = () => {
+    navigate("/podcasts"); // Navigate to the Podcasts page
+  };
+
   return (
     <nav className="fixed w-full z-10 bg-gray-900 bg-opacity-90 shadow-lg backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,6 +74,22 @@ export function Navbar() {
                     </NavigationMenuItem>
                   )
                 )}
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    onClick={toBlog} // Link to Blog
+                    className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-2 rounded-md transition duration-300 cursor-pointer"
+                  >
+                    Blog
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    onClick={toPodcasts} // Link to Podcasts
+                    className="text-large font-medium text-gray-300 hover:bg-white hover:text-gray-900 px-8 py-2 rounded-md transition duration-300 cursor-pointer"
+                  >
+                    Podcasts
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
@@ -111,6 +135,18 @@ export function Navbar() {
                 </a>
               )
             )}
+            <a
+              onClick={toBlog} // Link to Blog
+              className="text-gray-300 hover:bg-white hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition duration-300"
+            >
+              Blog
+            </a>
+            <a
+              onClick={toPodcasts} // Link to Podcasts
+              className="text-gray-300 hover:bg-white hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition duration-300"
+            >
+              Podcasts
+            </a>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200">
             <Button

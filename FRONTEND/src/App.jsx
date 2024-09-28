@@ -11,11 +11,17 @@ function AppContent() {
   // Get the current location
   const location = useLocation();
 
+
+
+
+ 
+
   // Check if the current path is signup, signin, or blog
-  const isAuthRoute = location.pathname === "/auth/signup" || location.pathname === "/auth/signin" || location.pathname === "/blog";
+  const isAuthRoute = location.pathname === "/auth/signup" || location.pathname === "/auth/signin" || location.pathname === "/blog" || location.pathname === "/podcasts";
   
   // Check if the user is logged in (token exists in localStorage)
   const isLoggedIn = localStorage.getItem('authToken') !== null;
+
 
   return (
     <>
