@@ -6,7 +6,6 @@ import { Nutrition } from "./landingComp/Nutrition";
 // import { About } from "./landingComp/About";
 import { ContactForm } from "./landingComp/ContactForm";
 import { Footer } from "./landingComp/Footer";
-
 export function Landing() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-gray-100">

@@ -14,7 +14,7 @@ function AppContent() {
 
 
   // Check if the current path is signup or signin
-  const isAuthRoute = location.pathname === "/auth/signup" || location.pathname === "/auth/signin" || location.pathname === "/blog";
+  const isAuthRoute = location.pathname === "/auth/signup" || location.pathname === "/auth/signin" || location.pathname === "/blog"  || location.pathname === "/podcasts" ;
  
 
   return (

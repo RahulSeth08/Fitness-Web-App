@@ -1,3 +1,5 @@
+
+
 import rockfitness from "../../assets/rockfitness.jpg"; 
 import { MapPin } from "lucide-react";
 
