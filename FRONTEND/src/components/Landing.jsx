@@ -1,12 +1,11 @@
 import { Hero } from "./landingComp/Hero";
-import {About} from "./landingComp/About";
+import { About } from "./landingComp/About";
 import { Bmi } from "./landingComp/Bmi";
 import { Services } from "./landingComp/Services";
 import { Nutrition } from "./landingComp/Nutrition";
 // import { About } from "./landingComp/About";
-import {ContactForm} from "./landingComp/ContactForm";
+import { ContactForm } from "./landingComp/ContactForm";
 import { Footer } from "./landingComp/Footer";
-
 
 export function Landing() {
   return (
@@ -25,13 +24,10 @@ export function Landing() {
         <section id="bmi">
           <Bmi />
         </section>
-        {/* <section id="about">
-          <About/>
-        </section> */}
         <section id="nutrition">
           <Nutrition />
         </section>
-        <section id="contactform">
+        <section id="contact">
           <ContactForm />
         </section>
         <Footer />
