@@ -1,19 +1,17 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { Card, CardHeader, CardContent, CardFooter } from "../ui/card";
 import { ScrollArea } from "../ui/scroll-area";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "../ui/sheet";
 import { ServiceSection } from "../dashboard/ServiceSection";
+import { UserNav } from "../dashboard/UserNav";
+import { ProgressSection } from "../dashboard/ProgressSection";
+import { HeroSection } from "../dashboard/HeroSection";
 import {
   BarChart3,
-  ChevronRight,
   Dumbbell,
-  Heart,
   LineChart,
   ListMusic,
   Menu,
   Sandwich,
-  User,
 } from "lucide-react";
 
 import logo from "../../assets/logo.png";
@@ -107,120 +105,6 @@ function Sidebar({ collapsed, onToggle }) {
           </Link>
         ))}
       </nav>
-    </div>
-  );
-}
-
-//---------USER-NAVIGATION--------//
-
-function UserNav() {
-  return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button
-          variant="ghost"
-          className=" flex items-center justify-around h-12 w-32 rounded-full bg-gray-800 hover:bg-gray-700 transition duration-200"
-          style={{ border: "none" }}
-        >
-          <User className="h-5 w-5 text-white" />
-          <span className="text-white text-base">Profile</span>
-        </Button>
-      </SheetTrigger>
-      <SheetContent className="bg-gray-900 text-white p-0">
-        {/* Added padding and removed the border */}
-        <Card
-          style={{ border: "none" }}
-          className="bg-gray-800 rounded-2xl p-4 shadow-lg mx-4 my-4"
-        >
-          <CardHeader className="flex items-center justify-between"></CardHeader>
-          <CardContent className="flex items-center space-x-4">
-            <img
-              src="https://avatars.githubusercontent.com/u/137706422?v=4" // User's image
-              alt="User"
-              className="h-16 w-16 rounded-full" // Removed border
-            />
-            <div className="space-y-1">
-              <p className="text-2xl text-gray-50 font-medium">Gourav Kumar</p>
-              <p className="text-sm text-gray-300">rajgourav11@example.com</p>
-            </div>
-          </CardContent>
-          <CardFooter className="flex flex-col gap-3">
-            <Button className="w-full bg-gray-300 hover:bg-gray-400 transition duration-200 text-black text-base">
-              Edit Profile
-            </Button>
-            <Button className="w-full bg-gray-300 hover:bg-gray-400 transition duration-200 text-black text-base">
-              LogOut
-            </Button>
-          </CardFooter>
-        </Card>
-      </SheetContent>
-    </Sheet>
-  );
-}
-
-//---------HERO-SECTION-------//
-
-function HeroSection() {
-  return (
-    <div className="flex flex-col justify-center space-y-4 text-center bg-gray-900 p-[10vh] rounded-xl">
-      <div className="space-y-2">
-        <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl xl:text-8xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-          Welcome to FitGuys Web
-        </h1>
-        <p className=" max-w-[800px] text-xl font-light tracking-tighter sm:text-xl xl:text-2xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mx-auto">
-          Track your workouts, manage your nutrition, and achieve your fitness
-          goals with our comprehensive suite of tools and services.
-        </p>
-      </div>
-    </div>
-  );
-}
-
-//---------PROGRESS-SECTION-------//
-
-function ProgressSection() {
-  return (
-    <div className="space-y-4 p-7 rounded-xl shadow-md bg-white">
-      <h2 className="text-3xl font-semibold">Your Progress</h2>
-      <div className="flex items-center space-x-4">
-        <img
-          src="https://avatars.githubusercontent.com/u/137706422?v=4"
-          alt="User Avatar"
-          width={80}
-          height={80}
-          className="rounded-full"
-        />
-        <div>
-          <h2 className="font-semibold text-xl">Gaurav Kumar</h2>
-          <p className="text-sm text-muted-foreground">
-            Goal: Gain 10 lbs muscle in 3 months
-          </p>
-        </div>
-      </div>
-      <div className="grid grid-cols-2 gap-4 bg-gray-">
-        <div className="border border-gray-200 p-4 rounded">
-          <p className="text-sm text-muted-foreground">Weight</p>
-          <p className="font-semibold">180 lbs</p>
-        </div>
-        <div className="border border-gray-200 p-4 rounded">
-          <p className="text-sm text-muted-foreground">Workout Hour</p>
-          <p className="font-semibold">0</p>
-        </div>
-        <div className="border border-gray-200 p-4 rounded">
-          <p className="text-sm text-muted-foreground">BMI</p>
-          <p className="font-semibold">25.8</p>
-        </div>
-        <div className="border border-gray-200 p-4 rounded">
-          <p className="text-sm text-muted-foreground">Body Fat</p>
-          <p className="font-semibold">18%</p>
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <Button className="px-8 bg-gray-900 w-full text-gray-100">
-          View Workout Logs
-          <ChevronRight className="ml-2 h-4 w-4" />
-        </Button>
-      </div>
     </div>
   );
 }
