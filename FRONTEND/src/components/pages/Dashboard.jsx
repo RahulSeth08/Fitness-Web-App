@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { Card, CardHeader, CardContent, CardFooter } from "../ui/card";
 import { ScrollArea } from "../ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "../ui/sheet";
+import { ServiceSection } from "../dashboard/ServiceSection";
 import {
   BarChart3,
   ChevronRight,
@@ -14,6 +15,7 @@ import {
   Sandwich,
   User,
 } from "lucide-react";
+
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
@@ -142,9 +144,12 @@ function UserNav() {
               <p className="text-sm text-gray-300">rajgourav11@example.com</p>
             </div>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex flex-col gap-3">
             <Button className="w-full bg-gray-300 hover:bg-gray-400 transition duration-200 text-black text-base">
               Edit Profile
+            </Button>
+            <Button className="w-full bg-gray-300 hover:bg-gray-400 transition duration-200 text-black text-base">
+              LogOut
             </Button>
           </CardFooter>
         </Card>
@@ -175,7 +180,7 @@ function HeroSection() {
 
 function ProgressSection() {
   return (
-    <div className="space-y-4 p-6 rounded-xl shadow-md bg-white">
+    <div className="space-y-4 p-7 rounded-xl shadow-md bg-white">
       <h2 className="text-3xl font-semibold">Your Progress</h2>
       <div className="flex items-center space-x-4">
         <img
@@ -198,8 +203,8 @@ function ProgressSection() {
           <p className="font-semibold">180 lbs</p>
         </div>
         <div className="border border-gray-200 p-4 rounded">
-          <p className="text-sm text-muted-foreground">Height</p>
-          <p className="font-semibold">5'10"</p>
+          <p className="text-sm text-muted-foreground">Workout Hour</p>
+          <p className="font-semibold">0</p>
         </div>
         <div className="border border-gray-200 p-4 rounded">
           <p className="text-sm text-muted-foreground">BMI</p>
@@ -215,87 +220,6 @@ function ProgressSection() {
           View Workout Logs
           <ChevronRight className="ml-2 h-4 w-4" />
         </Button>
-      </div>
-    </div>
-  );
-}
-
-//---------SERVICE-SECTION------//
-
-function ServiceSection() {
-  const services = [
-    {
-      icon: Dumbbell,
-      title: "Explore Workouts",
-      description: "Find workouts based on body part",
-      image: "https://i.pinimg.com/564x/83/0a/41/830a41d49ff6583ec4fc737d6c601e4c.jpg", // Placeholder image URL
-      link: "/explore-workouts",
-    },
-    {
-      icon: LineChart,
-      title: "Create Your Workout",
-      description: "Design your own custom workout plan",
-      image: "create-workout.jpg",
-      link: "/create-workout",
-    },
-    {
-      icon: Sandwich,
-      title: "Nutrition Plan",
-      description: "Get personalized nutrition advice",
-      image: "nutrition.jpg",
-      link: "/nutrition-plan",
-    },
-    {
-      icon: BarChart3,
-      title: "Track Progress",
-      description: "Monitor your fitness journey",
-      image: "progress.jpg",
-      link: "/track-progress",
-    },
-    {
-      icon: ListMusic,
-      title: "Fitness Media",
-      description: "Discover health-related music and podcasts",
-      image: "fitness-media.jpg",
-      link: "/fitness-media",
-    },
-    {
-      icon: Heart,
-      title: "Health Insights",
-      description: "Get personalized health recommendations",
-      image: "health-insights.jpg",
-      link: "/health-insights",
-    },
-  ];
-
-  return (
-    <div className="space-y-6 bg-white rounded-xl">
-      <h2 className="text-2xl font-semibold text-center">Our Services</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center px-4">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="bg-gray-500 text-card-foreground rounded-lg shadow-sm overflow-hidden w-full max-w-sm"
-          >
-            <img
-              src={service.image} // You can replace with actual image URLs
-              alt={service.title}
-              className="h-32 w-full object-cover"
-            />
-            <div className="p-4 flex items-center text-white">
-              <service.icon className="h-6 w-6 mr-2 text-gray-50" />
-              <h3 className="text-lg font-semibold">{service.title}</h3>
-            </div>
-            <p className="p-4 text-white">{service.description}</p>
-            <div className="p-4 flex justify-center">
-              <Button asChild className="bg-black text-white">
-                <a href={service.link} className="text-sm">
-                  Learn More
-                </a>
-              </Button>
-            </div>
-          </div>
-        ))}
       </div>
     </div>
   );
