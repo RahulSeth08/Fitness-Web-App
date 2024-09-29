@@ -5,14 +5,14 @@ import { SignIn } from "./components/auth/SignIn";
 import { SignUp } from "./components/auth/SignUp";
 import { Blog } from "./components/pages/Blog";
 import { Podcasts } from "./components/pages/Podcasts";
-import { Dashboard } from "./components/landingComp/Dashboard";
+import { Dashboard } from "./components/pages/Dashboard";
 
 function AppContent() {
   // Get the current location
   const location = useLocation();
   // Check if the current path is signup, signin, or blog
-  const isAuthRoute = location.pathname === "/auth/signup" || location.pathname === "/auth/signin" || location.pathname === "/blog" || location.pathname === "/podcasts";
-  
+  const isAuthRoute = location.pathname === "/auth/signup" || location.pathname === "/dashboard" || location.pathname === "/auth/signin" || location.pathname === "/blog" || location.pathname === "/podcasts";
+
   // Check if the user is logged in (token exists in localStorage)
   const isLoggedIn = localStorage.getItem('authToken') !== null;
 
