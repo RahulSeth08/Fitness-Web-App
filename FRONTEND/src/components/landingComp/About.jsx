@@ -13,10 +13,10 @@ const teamMembers = [
 
 const timeline = [
   { year: 2024, event: "FitGuysWeb founded" },
-  { year: 2013, event: "Opened first physical location" },
-  { year: 2016, event: "Launched online training platform" },
-  { year: 2019, event: "Expanded to 10 locations nationwide" },
-  { year: 2022, event: "Introduced AI-powered fitness tracking" },
+  { year: 2024, event: "Opened first physical location" },
+  { year: 2024, event: "Launched online training platform" },
+  { year: 2024, event: "Expanded to 10 locations nationwide" },
+  { year: 2024, event: "Introduced AI-powered fitness tracking" },
 ];
 
 export function About() {
