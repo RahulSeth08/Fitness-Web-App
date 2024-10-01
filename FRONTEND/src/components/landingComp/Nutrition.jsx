@@ -50,7 +50,7 @@ export function Nutrition() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#E6F4F1] text-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#fafafa] text-gray-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-center py-5 text-[#007B5F]">
           NUTRITION GUIDE

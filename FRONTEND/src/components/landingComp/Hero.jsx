@@ -12,7 +12,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative h-screen flex items-center justify-center pt-16 mb-16 backdrop-blur-lg" // Added mb-16
+      className="relative h-screen flex items-center justify-center pt-16  backdrop-blur-lg" // Added mb-16
     >
       <div className="absolute inset-0 z-0">
         <img

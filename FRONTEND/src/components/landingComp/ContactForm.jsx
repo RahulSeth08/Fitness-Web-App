@@ -33,7 +33,7 @@ export const ContactForm = () => {
   return (
     <div className="my-12">
       <Card className="w-full max-w-6xl mx-auto bg-white shadow-lg border border-gray-200 rounded-lg">
-        <CardHeader className="bg-[#FF8C00] text-white rounded-t-lg">
+        <CardHeader className="bg-[#0f172a] text-white rounded-t-lg">
           <CardTitle className="text-4xl font-bold text-center">Contact Us</CardTitle>
         </CardHeader>
         <CardContent className="p-8">
