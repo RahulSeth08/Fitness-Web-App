@@ -1,100 +1,128 @@
+import { useState } from 'react';
+import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { ChevronDown, ChevronUp, Users, Trophy, Dumbbell, Heart } from 'lucide-react';
 
+const teamMembers = [
+  { name: "Gourav Kumar", role: "Co-Founder", image: "/placeholder.svg?height=200&width=200" },
+  { name: "Darshan CH", role: "Co-Founder", image: "/placeholder.svg?height=200&width=200" },
+  { name: "Rahul Seth", role: "Co-Founder", image: "/placeholder.svg?height=200&width=200" },
+  { name: "Madhav Sharma", role: "Co-Founder", image: "/placeholder.svg?height=200&width=200" },
+];
 
-import rockfitness from "../../assets/rockfitness.jpg"; 
-import { MapPin } from "lucide-react";
+const timeline = [
+  { year: 2024, event: "FitGuysWeb founded" },
+  { year: 2024, event: "Opened first physical location" },
+  { year: 2024, event: "Launched online training platform" },
+  { year: 2024, event: "Expanded to 10 locations nationwide" },
+  { year: 2024, event: "Introduced AI-powered fitness tracking" },
+];
 
 export function About() {
+  const [showFullMission, setShowFullMission] = useState(false);
+
   return (
-    <section className="bg-[#0f1729] text-white">
-      <div className="relative h-64 md:h-96">
-        <img
-          src={rockfitness}
-          alt="Fitness Inspiration"
-          className="w-full h-full object-cover brightness-50"
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-white">
-            ABOUT US
-          </h2>
-        </div>
-      </div>
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="md:col-span-2 relative">
-            <h3 className="text-4xl font-bold mb-4 relative z-10 text-white">
-              About Us - Fit Guys Fitness
-              <span className="block h-1 bg-orange-500 mt-2 w-[calc(100%-1rem)]"></span>
-            </h3>
-            <div className="absolute inset-0 bg-[#1a2332] opacity-75 rounded-lg shadow-lg z-0"></div>
-            <p className="mb-4 relative z-10">
-              Welcome to Fit Guys, your go-to destination for all things fitness. 
-              Whether you're just starting your fitness journey or looking to elevate your current routine, 
-              our platform provides you with all the tools, guidance, and community support you need.
+    <section className="bg-gray-900 text-white py-16">
+      <div className="container mx-auto px-4">
+        <h1 className="text-5xl font-bold mb-16 text-center">About <span className="text-orange-500">FitGuysWeb</span></h1>
+        
+        {/* Mission Statement */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-semibold mb-8 text-center">Our Mission</h2>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-xl mb-4 leading-relaxed">
+              At FitGuys, we're on a mission to empower individuals to transform their lives through fitness, nutrition, and holistic well-being. We believe that everyone deserves to feel strong, confident, and healthy.
             </p>
-            <p className="mb-4 relative z-10">
-              Our mission is simple: to empower individuals to lead healthier lives through a comprehensive 
-              digital experience tailored to meet their unique fitness goals.
-            </p>
-            
-            <h4 className="text-xl font-semibold mb-2 relative z-10">
-              What We Offer:
-            </h4>
-            <ul className="list-disc list-inside mb-4 relative z-10">
-              <li>Extensive Exercise Library: Explore a diverse range of workouts tailored to different fitness levels, from strength training to yoga and everything in between.</li>
-              <li>Nutrition Guidance: Access personalized meal plans and nutritional tips to complement your fitness routine and promote overall well-being.</li>
-              <li>Expert Articles & Tips: Stay informed with articles written by fitness professionals covering workout strategies, wellness advice, and lifestyle tips.</li>
-              <li>Community Support: Join our vibrant online community, connect with like-minded individuals, share your progress, and find motivation.</li>
-            </ul>
-
-            <h4 className="text-xl font-semibold mb-2 relative z-10">
-              Availability:
-            </h4>
-            <ul className="list-disc list-inside mb-4 relative z-10">
-              <li>24/7 Online Access: Fit Guys is available to you anytime, anywhere.</li>
-            </ul>
-          </div>
-
-          <div className="space-y-8">
-            <div className="bg-[#1a2332] p-6 rounded-lg">
-              <h4 className="text-xl font-bold mb-4">Join Us Today</h4>
-              <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full p-2 bg-[#0f1729] rounded"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full p-2 bg-[#0f1729] rounded"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone"
-                  className="w-full p-2 bg-[#0f1729] rounded"
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600 transition-colors"
-                >
-                  Get Started
-                </button>
-              </form>
-            </div>
-
-            <div className="bg-[#1a2332] p-6 rounded-lg">
-              <h4 className="text-xl font-bold mb-4 flex items-center">
-                <MapPin className="mr-2" /> Find Us
-              </h4>
-              <img
-                src="/placeholder.svg"
-                alt="Map"
-                className="w-full rounded-lg mb-4"
-              />
-              <p>Online Fitness Platform</p>
-            </div>
+            {!showFullMission && (
+              <Button onClick={() => setShowFullMission(true)} variant="link" className="text-orange-500 hover:text-orange-400">
+                Read More <ChevronDown className="ml-2" />
+              </Button>
+            )}
+            {showFullMission && (
+              <>
+                <p className="text-xl mb-4 leading-relaxed">
+                  Our approach combines cutting-edge fitness science with personalized coaching to create sustainable lifestyle changes. We're not just about short-term results; we're committed to helping you build lasting habits that will serve you for a lifetime.
+                </p>
+                <p className="text-xl mb-4 leading-relaxed">
+                  Whether you're a beginner taking your first steps towards a healthier life or an athlete looking to push your limits, FitGuys is here to support, guide, and inspire you every step of the way.
+                </p>
+                <Button onClick={() => setShowFullMission(false)} variant="link" className="text-orange-500 hover:text-orange-400">
+                  Show Less <ChevronUp className="ml-2" />
+                </Button>
+              </>
+            )}
           </div>
         </div>
+        
+        {/* Team Members */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-semibold mb-12 text-center">Meet Our <span className="text-orange-500">Expert Team</span></h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <Card key={index} className="bg-gray-800 hover:bg-gray-700 transition-colors duration-300">
+                <CardContent className="p-6 text-center">
+                  <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-orange-500" />
+                  <h3 className="text-xl font-semibold mb-2 text-white">{member.name}</h3>
+                  <p className="text-white">{member.role}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+        
+        {/* Company Stats */}
+        <div className="mb-20">
+          <h2 className="text-4xl font-semibold mb-12 text-center">Our <span className="text-orange-500">Impact</span></h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[ 
+              { icon: Users, label: "Clients Served", value: "50,000+" },
+              { icon: Trophy, label: "Awards Won", value: "25" },
+              { icon: Dumbbell, label: "Workout Plans", value: "1,000+" },
+              { icon: Heart, label: "Lives Changed", value: "Countless" },
+            ].map((stat, index) => (
+              <Card key={index} className="bg-gray-800 hover:bg-gray-700 transition-colors duration-300">
+                <CardContent className="p-6 text-center">
+                  <stat.icon className="w-12 h-12 mx-auto mb-4 text-orange-500" />
+                  <h3 className="text-3xl font-bold mb-2 text-white">{stat.value}</h3>
+                  <p className="text-white">{stat.label}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+        
+        {/* Timeline */}
+        <div>
+          <h2 className="text-4xl font-semibold mb-12 text-center">Our <span className="text-orange-500">Journey</span></h2>
+          <Tabs defaultValue="2022" className="w-full">
+            <TabsList className="grid w-full grid-cols-5 mb-8">
+              {timeline.map((item) => (
+                <TabsTrigger key={item.year} value={item.year.toString()} className="text-black data-[state=active]:bg-orange-500">
+                  {item.year}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            {timeline.map((item) => (
+              <TabsContent key={item.year} value={item.year.toString()} className="mt-4">
+                <Card className="bg-gray-800">
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold mb-2 text-orange-500">{item.year}</h3>
+                    <p className="text-xl text-white">{item.event}</p>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
+        
+        {/* Call to Action */}
+        {/* <div className="mt-20 text-center">
+          <h2 className="text-4xl font-semibold mb-8">Ready to <span className="text-orange-500">Transform</span> Your Life?</h2>
+          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+            Start Your Journey
+          </Button>
+        </div> */}
       </div>
     </section>
   );
