@@ -12,11 +12,13 @@ export function SignUp() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  const backend_url = import.meta.env.VITE_API_URL
+  console.log("Hello!!")
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8080/signup', {
+      const response = await fetch(`${backend_url}/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
