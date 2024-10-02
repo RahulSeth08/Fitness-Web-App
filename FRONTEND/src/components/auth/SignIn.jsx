@@ -11,7 +11,6 @@ export function SignIn() {
   const navigate = useNavigate();
 
   const backend_url = import.meta.env.VITE_API_URL
-  console.log("Hello!!")
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
