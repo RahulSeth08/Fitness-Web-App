@@ -2,7 +2,10 @@ import { Button } from "../ui/button";
 import {
   ChevronRight,
 } from "lucide-react";
+import { useAuth } from "../auth/AuthContext";
+
 export function ProgressSection() {
+  const {userData} = useAuth();
     return (
       <div className="space-y-4 p-7 rounded-xl shadow-md bg-white">
         <h2 className="text-3xl font-semibold">Your Progress</h2>
@@ -15,7 +18,7 @@ export function ProgressSection() {
             className="rounded-full"
           />
           <div>
-            <h2 className="font-semibold text-xl">Gaurav Kumar</h2>
+            <h2 className="font-semibold text-xl">{userData.fullName}</h2>
             <p className="text-sm text-muted-foreground">
               Goal: Gain 10 lbs muscle in 3 months
             </p>

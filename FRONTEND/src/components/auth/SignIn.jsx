@@ -1,60 +1,25 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import signinimg from '../../assets/signup.jpg'; // Ensure the correct path for the image
+import signinimg from '../../assets/signup.jpg';
+import { useAuth } from '../auth/AuthContext'; // Import the useAuth hook
 
 export function SignIn() {
+  const { login, error } = useAuth(); // Use the context
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const backend_url = import.meta.env.VITE_API_URL
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-
-      const response = await fetch(`${backend_url}/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (response.ok) {
-        try {
-          // Check if the response is JSON
-          const contentType = response.headers.get('Content-Type');
-          if (contentType && contentType.includes('application/json')) {
-            const data = await response.json();
-            if (data.token) {
-              const token = data.token;
-              localStorage.setItem('authToken', token);
-              navigate('/dashboard');
-            } else {
-              setError('Token not found in response. Please try again.');
-            }
-          } else {
-            // If the response is not JSON, assume it's plain text
-            const token = await response.text();
-            localStorage.setItem('authToken', token);
-            navigate('/dashboard');
-          }
-        } catch (jsonError) {
-          setError('Failed to parse response. Please try again.');
-        }
-      } else {
-        try {
-          const errorData = await response.json();
-          setError(errorData.message || 'Sign in failed. Please try again.');
-        } catch (jsonError) {
-          setError('An error occurred. Please try again.');
-        }
-      }
+      await login(username, password); // Call login from context
+      navigate('/dashboard'); // Navigate to dashboard on successful login
     } catch (err) {
-      setError('An error occurred during sign in. Please try again.');
+      // Error handling is already managed in AuthContext
+      console.log(err);
     }
   };
 

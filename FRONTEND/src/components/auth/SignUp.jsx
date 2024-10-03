@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import signupimg from '../../assets/signup.jpg';
+import { useAuth } from '../auth/AuthContext'; // Import the Auth context
 
 export function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -9,30 +10,18 @@ export function SignUp() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const { register, error } = useAuth(); // Get the register function and error state from Auth context
+  const navigate = useNavigate(); // Get navigate function
 
-  const backend_url = import.meta.env.VITE_API_URL
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${backend_url}/signup`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ fullName, username, email, password }),
-      });
-
-      if (response.ok) {
-        navigate('/auth/signin');
-      } else {
-        const errorData = await response.json();
-        setError(errorData.message || 'Registration failed. Please try again.');
-      }
+      await register(fullName, username, email, password); // Call register from context
+      navigate('/auth/signin'); // Navigate to sign-in on successful registration
     } catch (err) {
-      setError('An error occurred during registration. Please try again.');
+      // Error handling is already managed in AuthContext
+      console.log(err);
     }
   };
 
@@ -130,16 +119,12 @@ export function SignUp() {
           <p className="text-xs text-center mt-3">
             Already have an account?{' '}
             <Link to="/auth/signin" className="text-indigo-600 hover:underline">
-              Log in
+              Sign in now
             </Link>
           </p>
-          <div className="mt-8 text-xs text-gray-500 flex justify-between"> {/* Increased margin-top for bottom gap */}
-            <a href="#" className="hover:underline">
-              Terms of Use
-            </a>
-            <a href="#" className="hover:underline">
-              Privacy Policy
-            </a>
+          <div className="mt-6 text-xs text-gray-500 flex justify-between">
+            <a href="#" className="hover:underline">Terms of Use</a>
+            <a href="#" className="hover:underline">Privacy Policy</a>
           </div>
         </div>
         <div className="w-1/2 relative overflow-hidden">
