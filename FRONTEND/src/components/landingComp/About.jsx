@@ -5,10 +5,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { ChevronDown, ChevronUp, Users, Trophy, Dumbbell, Heart } from 'lucide-react';
 
 const teamMembers = [
-  { name: "Gourav Kumar", role: "Co-Founder", image: "/placeholder.svg?height=200&width=200" },
-  { name: "Darshan CH", role: "Co-Founder", image: "/placeholder.svg?height=200&width=200" },
-  { name: "Rahul Seth", role: "Co-Founder", image: "/placeholder.svg?height=200&width=200" },
-  { name: "Madhav Sharma", role: "Co-Founder", image: "/placeholder.svg?height=200&width=200" },
+  { name: "Gourav Kumar", role: "Co-Founder", image: "https://avatars.githubusercontent.com/u/137706422?v=4" },
+  { name: "Darshan CH", role: "Co-Founder", image: "https://shorturl.at/RVFlm" },
+  { name: "Rahul Seth", role: "Co-Founder", image: "https://avatars.githubusercontent.com/u/119778639?v=4" },
+  { name: "Madhav Sharma", role: "Co-Founder", image: "https://avatars.githubusercontent.com/u/116294690?v=4" },
 ];
 
 const timeline = [
