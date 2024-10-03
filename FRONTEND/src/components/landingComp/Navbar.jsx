@@ -8,12 +8,12 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
 } from "../ui/navigation-menu";
-import logo from "../../assets/logo.png";
+
+
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -43,8 +43,8 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0 pt-5">
-              <img
+            <div className="flex-shrink-0 pt-1 flex items-center">
+              {/* <img
                 src={logo}
                 alt="Fitness Logo"
                 width={90}
@@ -53,7 +53,16 @@ export function Navbar() {
                 onClick={() => {
                   scrollToSection("hero".toLowerCase());
                 }}
-              />
+              /> */}
+              <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2 17L12 22L22 17" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2 12L12 17L22 12" stroke="#6B46C1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <h2 onClick={() => {
+                scrollToSection("hero".toLowerCase());
+                setIsMenuOpen(false);
+              }} className="text-large font-medium text-gray-300 hover:text-xl px-5 py-2 transition duration-300 cursor-pointer">FitGuysWeb</h2>
             </div>
           </div>
           <div className="hidden md:block">
