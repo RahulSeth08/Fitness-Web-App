@@ -62,7 +62,7 @@ export function Navbar() {
               <h2 onClick={() => {
                 scrollToSection("hero".toLowerCase());
                 setIsMenuOpen(false);
-              }} className="text-large font-medium text-gray-300 hover:text-xl px-5 py-2 transition duration-300 cursor-pointer">FitGuysWeb</h2>
+              }} className="text-lg font-medium text-gray-300 transform px-5 py-2 transition-transform duration-300 hover:scale-110 cursor-pointer">FitGuysWeb</h2>
             </div>
           </div>
           <div className="hidden md:block">
