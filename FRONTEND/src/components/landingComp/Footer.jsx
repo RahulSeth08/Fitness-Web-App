@@ -131,7 +131,7 @@ export function Footer() {
             <li className="flex items-center">
               <FaMapMarkerAlt className="mr-2" />
               <span>
-                123 Fitness St, Gym City, Pentagon, Washington DC, Pakistan
+              12th Avenue Advant Navis Noida Sec-135 UP
               </span>
             </li>
           </ul>
